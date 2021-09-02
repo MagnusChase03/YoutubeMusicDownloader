@@ -1,7 +1,7 @@
 /*
 
 Author: Zachary Ness
-Desc: A program that downloads music from youtube
+Desc: A script that downloads music from youtube
 Inputs: Youtube URL, format number, and name of mp3 file
 Outputs: None
 
@@ -35,7 +35,7 @@ int main(int argc, char** argv) {
 
 /*
 
-Desc: Download webm from url either 250 or 251
+Desc: Download webm from url either 249, 250 or 251
 Inputs: Video url and format number
 Outputs: None
 
