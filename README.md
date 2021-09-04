@@ -1,8 +1,8 @@
-Youtube Music Downloader
+#Youtube Music Downloader
 
-Go to master or dev brach to see code.
+**Go to master or dev brach to see code.**
 
-Requisites
+**Requisites**
 1) youtube-dl
 2) ffmpeg
 3) nodejs
