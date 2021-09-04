@@ -109,6 +109,11 @@ public class Download {
             Process run = Runtime.getRuntime().exec(command);
             showCommandLog(run);
 
+            command = "rm " + webmName;
+            System.out.println("Running: " + command);
+            run = Runtime.getRuntime().exec(command);
+            showCommandLog(run);
+
         } catch (Exception e) {
 
             System.out.println(e);
