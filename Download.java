@@ -4,7 +4,7 @@ import java.io.*;
 
 Name: Download
 Desc: Download music from youtube link
-Usage: java Download [URL] [MP3 Name]
+Usage: java Download [URL] [MP3 Name] [Format]
 Inputs: Youtube link and mp3 file name
 Outputs: MP3 file
 
@@ -126,7 +126,7 @@ public class Download {
         
         if (args.length < 2) {
 
-            System.out.println("Usage: java Download [URL] [MP3 Name]");
+            System.out.println("Usage: java Download [URL] [MP3 Name] [Format]");
             return;
 
         } else if (args.length == 2) {
