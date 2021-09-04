@@ -104,7 +104,7 @@ public class Download {
 
         try {
 
-            String command = "ffmpeg -vn -i " + webmName + " " + mp3Name + ".mp3";
+            String command = "ffmpeg -vn -i " + webmName + " Music/" + mp3Name + ".mp3";
             System.out.println("Running: " + command);
             Process run = Runtime.getRuntime().exec(command);
             showCommandLog(run);
