@@ -23,20 +23,19 @@ int main(int argc, char** argv) {
 
     if (argc < 4) {
 
-        cout << "Usage: ./Download [v(ideo)/a(udio)] [URL] [Output File]" << endl;
+        cout << "Usage: ./Download [V(ideo)/A(udio)] [URL] [Output File]" << endl;
         return 1;
 
     }
 
     string videoFormat = displayVideoFormats(argv[2]);
-
-    string option = argv[1];
-    if (option == "a") {
+    string audio = "A";
+    if (argv[1] == audio.c_str()) {
 
         downloadVideo(argv[2], videoFormat);
         convertVideo(argv[3]);
 
-    } else if (option == "v") {
+    } else {
 
         downloadVideo(argv[2], videoFormat, argv[3]);
 
@@ -95,7 +94,7 @@ Outputs: None
 void downloadVideo(string videoURL, string videoFormat, string mp4Name) {
 
     stringstream command;
-    command << "youtube-dl -f " << videoFormat << " " << videoURL << " -o " << mp4Name << ".mp4";
+    command << "youtube-dl -f " << videoFormat << " " << videoURL << " -o " << mp4Name;
     system(command.str().c_str());
 
 }
