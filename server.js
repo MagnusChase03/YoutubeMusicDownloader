@@ -1,18 +1,11 @@
-const http = require("http");
-const fs = require("fs");
-
-const hostname = "localhost";
+const express = require("express");
+const app = express();
 const port = 3000;
 
-const server = http.createServer((req, res) => {
+app.get("/", (req, res) => {
 
-    res.writeHeader(200, {"Content-Type": "text/html"});
-    
-    const html = fs.readFileSync("./index.html");
-    res.write(html);
-
-    res.end();
+  res.send("Hello World!");
 
 });
 
-server.listen(port, hostname);
+app.listen(port);
