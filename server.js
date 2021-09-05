@@ -1,18 +1,35 @@
-const http = require("http");
-const fs = require("fs");
+const express = require("express");
+const path = require("path");
+const formidable = require("express-formidable");
+const { exec } = require("child_process");
 
-const hostname = "localhost";
+const app = express();
 const port = 3000;
 
-const server = http.createServer((req, res) => {
+app.use(express.static(__dirname + "/assets"));
+app.use(express.static(__dirname + "/music"));
+app.use(formidable());
 
-    res.writeHeader(200, {"Content-Type": "text/html"});
-    
-    const html = fs.readFileSync("./index.html");
-    res.write(html);
+app.get("/", (req, res) => {
 
-    res.end();
+    res.sendFile(path.join(__dirname, 'assets/index.html'));
 
 });
 
-server.listen(port, hostname);
+app.post("/post", (req, res) => {
+
+    const URL = req.fields["URL"];
+    const fileName = req.fields["fileName"];
+    console.log(fileName);
+
+    exec("java backend.Download " + URL + " " + fileName, (error, stdout, stderr) => {
+        
+        console.log(stdout);
+
+    });
+
+    res.redirect("/music/" + fileName + ".mp3");
+
+});
+
+app.listen(port);

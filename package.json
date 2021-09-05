@@ -1,0 +1,24 @@
+{
+  "name": "youtubedownloader",
+  "version": "1.0.0",
+  "description": "Youtube music downloader",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MagnusChase03/YoutubeMusicDownloader.git"
+  },
+  "author": "MagnusChase03",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MagnusChase03/YoutubeMusicDownloader/issues"
+  },
+  "homepage": "https://github.com/MagnusChase03/YoutubeMusicDownloader#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-formidable": "^1.2.0"
+  }
+}
