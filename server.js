@@ -25,10 +25,9 @@ app.post("/post", (req, res) => {
     exec("java backend.Download " + URL + " " + fileName, (error, stdout, stderr) => {
         
         console.log(stdout);
+        res.download(__dirname + "/music/" + fileName + ".mp3");
 
     });
-
-    res.redirect("/music/" + fileName + ".mp3");
 
 });
 
